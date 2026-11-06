@@ -10,13 +10,16 @@ These protocols can be abused in poisoning attacks, where an attacker responds t
 
 Reduce the risk of LLMNR and NBT-NS poisoning by disabling unnecessary name-resolution protocols on domain-joined Windows workstations.
 
-## Environment
+## Lab Environment
 
-- Domain: `MARVEL.LOCAL`
-- Domain Controller: `HYDRA-DC`
-- Target OU: `Workstations`
-- Target Workstations: `HEAVEN` and `PETER`
-- Operating System: Windows 10 Pro 22H2
+| Component | Configuration |
+|---|---|
+| Domain | `MARVEL.LOCAL` |
+| Domain Controller | `HYDRA-DC` |
+| OU | `Workstations` |
+| Workstation 1 | `HEAVEN` |
+| Workstation 2 | `PETER` |
+| Operating System | Windows 10 Pro 22H2 |
 
 ## 1. Disable LLMNR Through Group Policy
 
