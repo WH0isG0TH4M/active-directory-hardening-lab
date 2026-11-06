@@ -152,7 +152,7 @@ Do not select:
 - RC4_HMAC_MD5
 
 The intention is to allow AES128 and AES256 while excluding RC4 from the configured encryption policy.
-
+![Turn Off Multicast Name Resolution](../screenshots/Kerberos1.png)
 ## 7. Kerberos Authentication Validation
 
 After configuring AES, authentication was tested using Windows Kerberos tools and Event Viewer.
@@ -176,7 +176,7 @@ AES-256-CTS-HMAC-SHA1-96
 ```
 
 Both the `krbtgt/MARVEL.LOCAL` ticket and the LDAP service ticket showed AES256 encryption.
-
+![Turn Off Multicast Name Resolution](../screenshots/klist_result.png)
 ### 7.2 Validate Peter Parker authentication
 
 Windows Event Viewer was used to inspect Event ID 4768.
@@ -209,7 +209,7 @@ Observed event information:
 | Status | 0x0 |
 
 **Result:** Peter Parker successfully obtained a Kerberos TGT using AES256 encryption.
-
+![Turn Off Multicast Name Resolution](../screenshots/kerberos3.png)
 The event also showed:
 
 ```text
