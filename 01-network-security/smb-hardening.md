@@ -41,6 +41,8 @@ SMB Signing uses a digital signature to verify the integrity and authenticity of
    - `Microsoft network client: Digitally sign communications (always)`
    - `Microsoft network server: Digitally sign communications (always)`
 
+![SMB NTLMRELAY](../screenshots/smb_ntlmrelay.png)
+
 6. Apply the policy on the target workstations:
 
    ```powershell
@@ -87,15 +89,16 @@ NTLM is an older Windows authentication protocol. Attackers may abuse NTLM authe
    `Computer Configuration > Policies > Windows Settings > Security Settings > Local Policies > Security Options`
 
 5. Review the available policies under **Network security: Restrict NTLM**.
-6. Start with auditing NTLM usage before enforcing restrictions.
-7. Review audit results and identify systems or applications that still depend on NTLM.
-8. Apply restrictions gradually after confirming compatibility.
+
+![SMB NTLMRELAY](../screenshots/ntlm_restrict.png)
 
 **Verification:**
 
 Review the NTLM Operational log:
 
 `Event Viewer > Applications and Services Logs > Microsoft > Windows > NTLM > Operational`
+
+![SMB NTLMRELAY](../screenshots/event_id_8001.png)
 
 Check for NTLM authentication activity and identify systems that still use the protocol.
 
