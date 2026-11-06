@@ -26,11 +26,15 @@ On the Domain Controller:
 2. Create or edit a workstation security GPO.
 3. Navigate to:
 
-   `Computer Configuration > Policies > Administrative Templates > Network > DNS Client`
+   `Computer Configuration > Administrative Templates > Network > DNS Client`
 
-4. Open **Turn off multicast name resolution**.
-5. Set the policy to **Enabled**.
-6. Apply the GPO to the `Workstations` OU.
+![Turn Off Multicast Name Resolution](../screenshots/turn_off_multicast.png)
+
+5. Open **Turn off multicast name resolution**.
+6. Set the policy to **Enabled**.
+7. Click Apply 
+
+![Turn Off Multicast Name Resolution](../screenshots/turn_off_multicast2.png)
 
 ## 2. Disable NBT-NS (NetBIOS over TCP/IP)
 
@@ -46,6 +50,8 @@ NetBIOS over TCP/IP was manually disabled through Windows Network Adapter Proper
 6. Open the **WINS** tab.
 7. Under NetBIOS setting, select **Disable NetBIOS over TCP/IP**.
 8. Click **OK** to apply the changes.
+
+![Disable NetBIOS over TCP/IP](../screenshots/nbt-ns1.png)
 
 ## 3. Additional Security Recommendations
 
