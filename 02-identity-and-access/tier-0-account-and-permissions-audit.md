@@ -62,6 +62,8 @@ The following results were collected using `Get-ADGroupMember -Recursive`.
 | tstark | user |
 | Administrator | user |
 
+![ADGROUP](../screenshots/ADGroupMember.png)
+
 ### Initial Findings
 
 - `SQLService` was a member of Domain Admins, Enterprise Admins, and Schema Admins.
@@ -89,6 +91,8 @@ The `SQLService` account was also removed from its previously identified Adminis
 Its latest verified group membership was `Domain Users` only.
 
 The `hawkeye` account was removed from Domain Admins and retained in Domain Users.
+
+![ADGroup](../screenshots/ADGroupMember2.png)
 
 **Assessment:** The excessive administrative group memberships identified on SQLService and hawkeye were addressed. Administrator and tstark remain privileged accounts and require strict access control.
 
@@ -122,6 +126,8 @@ The observed configuration was:
 | Administrators | Previously identified as a member |
 | Group Policy Creator Owners | Previously identified as a member |
 
+![SQLPass](../screenshots/SQLPassword.png)
+
 ### Security Findings
 
 1. The account had membership in multiple highly privileged administrative groups.
@@ -143,7 +149,13 @@ The following actions were completed:
 4. Removed SQLService from Administrators.
 5. Removed SQLService from Group Policy Creator Owners.
 6. Cleared the exposed password information from the Description field.
+   
+![ClearText](../screenshots/ClearedText.png)
+
 7. Reset the SQLService account password.
+   
+![ResetPass](../screenshots/ResetPassword.png)
+
 8. Inspected Windows services and scheduled tasks on the Domain Controller and client systems for dependencies on the account.
 
 ### 3.3 After Remediation
@@ -206,6 +218,8 @@ Initial findings:
 | adminCount | 1 |
 | ACL Inheritance | Disabled |
 
+![hawkeye](../screenshots/hawkeyeCreated.png)
+
 ### Security Findings
 
 - The account had Domain Admins membership.
@@ -232,6 +246,8 @@ The following actions were completed:
 | Last Logon | September 3, 2026 | Historical value |
 | adminCount | 1 | 1 |
 | ACL Inheritance | Disabled | Disabled |
+
+![hawkeye](../screenshots/DisabledHawkeye.png)
 
 ### 4.4 Verification and Assessment
 
@@ -271,6 +287,8 @@ Name       SamAccountName
 Tony Stark tstark
 ```
 
+![tstark](../screenshots/AddProtectedUser.png)
+
 ### 5.2 Delegation Verification
 
 The account's delegation setting was checked using:
@@ -286,6 +304,7 @@ Observed result:
 SamAccountName AccountNotDelegated
 tstark         True
 ```
+![tstark](../screenshots/AccountNotDelegated.png)
 
 ### 5.3 Kerberos Verification
 
@@ -331,6 +350,8 @@ Select-Object SamAccountName,Enabled,adminCount
 | tstark | True | 1 |
 | SQLService | True | 1 |
 | hawkeye | False | 1 |
+
+![AdminCount](../screenshots/AdminCount.png)
 
 ### Findings
 
