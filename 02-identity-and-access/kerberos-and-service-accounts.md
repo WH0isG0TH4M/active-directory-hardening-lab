@@ -147,7 +147,7 @@ No accounts were identified with `DoesNotRequirePreAuth` set to `True` during th
 
 ### Status
 
-No accounts were identified as exposed to AS-REP Roasting by this check.
+No accounts were identified as exposed to AS-REP Roasting.
 
 ---
 
@@ -232,8 +232,8 @@ This confirmed that `HEAVEN` was able to successfully retrieve and use the gMSA 
 
 ## Final Audit Summary
 
-| Finding | Status |
-|---|---|
+| Check |Finding | Status |
+|---|---|---|
 | SPN Accounts | Privileged `SQLService` account with SPN identified and retired | Remediated |
 | Service Account Passwords | Manual service account management risk addressed by retiring `SQLService` and validating gMSA | Remediated |
 | AS-REP Roasting | No accounts identified with pre-authentication disabled | Passed |
