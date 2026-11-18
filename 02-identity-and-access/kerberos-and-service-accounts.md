@@ -1,4 +1,4 @@
-# Kerberos and Service Accounts (Checks 11–14)
+# Kerberos and Service Accounts
 
 ## Overview
 
