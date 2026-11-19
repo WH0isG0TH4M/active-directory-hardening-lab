@@ -20,6 +20,8 @@ Get-ADUser -Filter 'TrustedForDelegation -eq $true' -Properties TrustedForDelega
 Get-ADComputer -Filter 'TrustedForDelegation -eq $true' -Properties TrustedForDelegation
 ```
 
+![TFD](../screenshots/TFD.png)
+
 **Findings:**
 
 - No user accounts were configured for unconstrained delegation.
@@ -27,6 +29,7 @@ Get-ADComputer -Filter 'TrustedForDelegation -eq $true' -Properties TrustedForDe
 - No other domain computers were identified with this setting.
 
 The Domain Controller's unconstrained delegation setting was retained as part of the lab's existing configuration. Domain Controllers commonly require this behavior for certain authentication and domain operations.
+
 
 #### Assessment
 
@@ -230,6 +233,8 @@ Get-ADObject (Get-ADDomain).DistinguishedName `
 Select-Object DistinguishedName, 'ms-DS-MachineAccountQuota'
 ```
 
+![Quota_10](../screenshots/Quota_10.png)
+
 **Initial Finding:**
 
 ```text
@@ -256,6 +261,7 @@ Get-ADObject (Get-ADDomain).DistinguishedName `
     -Properties 'ms-DS-MachineAccountQuota' |
 Select-Object DistinguishedName, 'ms-DS-MachineAccountQuota'
 ```
+![Quota_0](../screenshots/Quota_0.png)
 
 **Final Finding:**
 
