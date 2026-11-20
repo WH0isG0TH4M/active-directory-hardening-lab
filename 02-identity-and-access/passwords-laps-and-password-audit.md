@@ -29,6 +29,8 @@ Implement Windows Local Administrator Password Solution (Windows LAPS) to manage
 Update-LapsADSchema
 ```
 
+![msLAPSw](../screenshots/msLAPS.png)
+
 The following Windows LAPS attributes became available:
 
 - `msLAPS-CurrentPasswordVersion`
@@ -87,6 +89,12 @@ Configured the following settings:
 | Post-authentication actions | Reset password and log off managed account |
 | Post-authentication grace period | 8 hours |
 
+![Pass_Comp](../screenshots/Password_Complexity.png)
+
+![Pass_Period](../screenshots/Grace_period.png)
+
+![Laps_Conf](../screenshots/Laps_Conf.png)
+
 **5. Applied and Verified the Policy**
 
 On PETER:
@@ -118,6 +126,8 @@ On HYDRA-DC:
 Get-LapsADPassword -Identity PETER
 Get-LapsADPassword -Identity HEAVEN
 ```
+
+![Laps](../screenshots/LAPS_PETER_HEAVEN.png)
 
 Both computers returned:
 
@@ -220,6 +230,8 @@ $AuditResults
 
 The initial password audit identified:
 
+![Pass_Quality](../screenshots/Pass_Quality.png)
+
 **Accounts sharing identical passwords:**
 
 - `MARVEL\Administrator`
@@ -275,6 +287,7 @@ Get-ADUser -Filter 'PasswordNotRequired -eq $true' `
     Select-Object SamAccountName, Enabled, PasswordNotRequired
 ```
 
+
 The initial result identified:
 
 | Account | Enabled | PasswordNotRequired |
@@ -291,6 +304,8 @@ Set-ADUser -Identity "Guest" -PasswordNotRequired $false
 
 ### Verification
 
+![PassNotReq](../screenshots/PassNotReq.png)
+
 Reran the original query. No accounts were returned.
 
 ### Final Assessment
@@ -304,6 +319,8 @@ No Active Directory user accounts were found with `PasswordNotRequired` enabled.
 ### Objective
 
 Identify accounts configured to store passwords using reversible encryption.
+
+![RevPassEnc](../screenshots/RevPassEnc.png)
 
 ### Verification
 
@@ -346,6 +363,8 @@ Get-ChildItem $sysvol -Recurse -File -ErrorAction SilentlyContinue |
         }
     }
 ```
+
+![Sysvol](../screenshots/Sysvol.png)
 
 ### Initial Findings
 
@@ -465,14 +484,14 @@ The built-in Guest account is disabled.
 
 | Check | Status |
 |---|---|
-| Windows LAPS | Completed |
-| Shared Local Administrator Passwords | Completed |
-| Password Quality Audit | Completed |
-| Password Not Required | Completed |
-| Reversible Password Encryption | Completed |
-| SYSVOL Credential Exposure | Completed |
-| Inactive AD Accounts | Completed |
-| Built-in Guest Account Disabled | Completed |
+| Windows LAPS | Passed |
+| Shared Local Administrator Passwords | Passed |
+| Password Quality Audit | Passed |
+| Password Not Required | Passed |
+| Reversible Password Encryption | Passed |
+| SYSVOL Credential Exposure | Passed |
+| Inactive AD Accounts | Passed |
+| Built-in Guest Account Disabled | Passed |
 
 ### Conclusion
 
