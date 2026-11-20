@@ -190,7 +190,7 @@ The custom local accounts still exist and are not managed by the current LAPS po
 
 ---
 
-## Check 20 – Active Directory Password Quality Audit
+## Active Directory Password Quality Audit
 
 ### Objective
 
@@ -259,7 +259,7 @@ The initial audit identified password reuse and account configuration issues. Re
 
 ---
 
-## Check 21 – Password Not Required
+## Password Not Required
 
 ### Objective
 
@@ -299,7 +299,7 @@ No Active Directory user accounts were found with `PasswordNotRequired` enabled.
 
 ---
 
-## Check 22 – Reversible Password Encryption
+## Reversible Password Encryption
 
 ### Objective
 
@@ -325,7 +325,7 @@ No Active Directory user accounts were found with reversible password encryption
 
 ---
 
-## Check 23 – SYSVOL Credential Exposure
+## SYSVOL Credential Exposure
 
 ### Objective
 
@@ -382,7 +382,7 @@ The Default Domain Policy has reversible password storage disabled. The SYSVOL s
 
 ---
 
-## Check 24 – Inactive Active Directory Accounts
+## Inactive Active Directory Accounts
 
 ### Objective
 
@@ -430,7 +430,7 @@ No additional active stale user or computer accounts were identified for disabli
 
 ---
 
-## Check 25 – Built-in Guest Account Disabled
+## Built-in Guest Account Disabled
 
 ### Objective
 
