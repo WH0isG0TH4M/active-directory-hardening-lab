@@ -83,6 +83,8 @@ Get-ItemProperty `
 Select-Object LDAPServerIntegrity, LdapEnforceChannelBinding
 ```
 
+![ldap_conf](../screenshots/ldap_conf.png)
+
 Final configuration:
 
 | Setting | Value | Status |
@@ -127,6 +129,8 @@ Set-Service -Name Spooler -StartupType Disabled
 Get-Service -Name Spooler |
 Select-Object Name, Status, StartType
 ```
+
+![print_spooler](../screenshots/print_spooler.png)
 
 Final result:
 
@@ -198,6 +202,8 @@ Get-ItemProperty `
 Select-Object LmCompatibilityLevel
 ```
 
+![LmCompatibilityLevel](../screenshots/LmCompatibilityLevel.png)
+
 Final value: `5`
 
 | Protocol | Configuration |
@@ -227,6 +233,8 @@ Checked SMB server configuration:
 Get-SmbServerConfiguration |
 Select-Object EnableSMB1Protocol
 ```
+
+![SMBv1](../screenshots/SMBv1.png)
 
 Result: `False`
 
