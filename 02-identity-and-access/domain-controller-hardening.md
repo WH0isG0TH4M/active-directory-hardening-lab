@@ -87,6 +87,16 @@ Protect Active Directory against data loss and prepare for Domain Controller or 
 
 ### Backup Configuration
 
+![backup](../screenshots/Backup_VM.png)
+
+![backup](../screenshots/BACKUP_TASK_OK.png)
+
+![backup](../screenshots/Backup_Backup_Job.png)
+
+![backup](../screenshots/Backup_Retention.png)
+
+![backup](../screenshots/Backup_Conf.png)
+
 An initial manual Proxmox backup was created, and the resulting backup archive was verified.
 
 A daily scheduled backup was configured for:
@@ -183,6 +193,12 @@ On the collector:
 `Event Viewer → Windows Logs → Forwarded Events`
 
 ### Result
+
+![event_id](../screenshots/event_id_4728_4729.png)
+
+![event_id](../screenshots/event_id_4728.png)
+
+![event_id](../screenshots/event_id_4729.png)
 
 **Status: Completed**
 
