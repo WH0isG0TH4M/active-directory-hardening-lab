@@ -206,7 +206,7 @@ The source-initiated subscription is active, reports no error, and successfully 
 
 ---
 
-## Check 39 – Tier 0 Security Auditing
+## Tier 0 Security Auditing
 
 ### Objective
 
